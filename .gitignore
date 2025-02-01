@@ -1,2 +1,4 @@
-NvidiaBot\obj
-NvidiaBot\bin
+obj
+bin
+.idea
+NvidiaBot.sln.DotSettings.user
