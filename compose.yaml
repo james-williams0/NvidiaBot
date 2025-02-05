@@ -1,0 +1,13 @@
+﻿services:
+  nvidiabot.worker:
+    image: nvidiabot.worker
+    build:
+      context: .
+      dockerfile: NvidiaBot.Worker/Dockerfile
+    environment:
+      - Configuration__Twilio__FromPhoneNumber=${CONFIGURATION__TWILIO__FROMPHONENUMBER}
+      - Configuration__Twilio__ToPhoneNumbers_0=${CONFIGURATION__TWILIO__TOPHONENUMBERS_0}
+      - Configuration__Twilio__ToPhoneNumbers_1=${CONFIGURATION__TWILIO__TOPHONENUMBERS_1}
+      - Configuration__Twilio__AccountSid=${CONFIGURATION__TWILIO__ACCOUNTSID}
+      - Configuration__Twilio__AuthToken=${CONFIGURATION__TWILIO__AUTHTOKEN}
+      

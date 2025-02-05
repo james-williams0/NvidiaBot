@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace NvidiaBot;
+namespace NvidiaBot.Responses;
 
 public record FeInventoryResponse
 {

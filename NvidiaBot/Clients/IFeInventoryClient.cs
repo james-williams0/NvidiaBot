@@ -1,6 +1,7 @@
-﻿using Refit;
+﻿using NvidiaBot.Responses;
+using Refit;
 
-namespace NvidiaBot;
+namespace NvidiaBot.Clients;
 
 public interface IFeInventoryClient
 {
