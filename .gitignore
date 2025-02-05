@@ -2,3 +2,5 @@ obj
 bin
 .idea
 NvidiaBot.sln.DotSettings.user
+.env
+!.env*
