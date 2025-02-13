@@ -9,19 +9,6 @@ public record ConfigurationOptions
     public List<NvidiaOptions> Nvidia { get; init; } = [];
 }
 
-public record TwilioOptions
-{
-    public const string Twilio = "Twilio";
-    
-    public string FromPhoneNumber { get; init; } = string.Empty;
-    
-    public List<string> ToPhoneNumbers { get; init; } = [];
-    
-    public string AccountSid { get; init; } = string.Empty;
-    
-    public string AuthToken { get; init; } = string.Empty;
-}
-
 public record NvidiaOptions
 {
     public const string Nvidia = "Nvidia";
@@ -58,4 +45,17 @@ public record FeInventoryOptions
     public string Skus { get; init; } = "NVGFT590";
     
     public string Locale { get; init; } = "en-gb";
+}
+
+public record TwilioOptions
+{
+    public const string Twilio = "Twilio";
+    
+    public List<string> ToPhoneNumbers { get; init; } = [];
+    
+    public string FromPhoneNumber { get; init; } = string.Empty;
+    
+    public string AccountSid { get; init; } = string.Empty;
+    
+    public string AuthToken { get; init; } = string.Empty;
 }

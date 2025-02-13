@@ -24,11 +24,7 @@ public class TwilioClient : ITwilioClient
     
     public async Task SendMessageAsync(string purchaseLink)
     {
-        var sb = new StringBuilder();
-        sb.AppendLine("Hello subscriber,");
-        sb.AppendLine("There might be stock available or coming soon at:");
-        sb.AppendLine(purchaseLink);
-        var body = sb.ToString();
+        var body = GetNotificationMessage(purchaseLink);
         
         foreach (var recipient in _twilioOptions.ToPhoneNumbers)
         {
@@ -37,5 +33,14 @@ public class TwilioClient : ITwilioClient
                 from: new PhoneNumber(_twilioOptions.FromPhoneNumber),
                 to: new PhoneNumber(recipient));    
         }
+    }
+
+    private string GetNotificationMessage(string purchaseLink)
+    {
+        var stringBuilder = new StringBuilder();
+        stringBuilder.AppendLine("Hello subscriber,");
+        stringBuilder.AppendLine("There might be stock available or coming soon at:");
+        stringBuilder.AppendLine(purchaseLink);
+        return stringBuilder.ToString();
     }
 }
